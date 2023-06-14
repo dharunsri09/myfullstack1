@@ -1,0 +1,14 @@
+{% extends 'admin_main.html' %}
+
+{% block content %} 
+<div>
+    <form method="POST" action="">
+        {% csrf_token %} 
+        <p>Are you sure you want to update "{{obj.is_verified}}"</p>
+        <a href="{{request.META.HTTP_REFERER}}"> Back </a>
+        <input type="submit" value="Confirm" style="width: auto; height: auto;"/>
+    </form>
+</div>
+
+
+{% endblock content %}

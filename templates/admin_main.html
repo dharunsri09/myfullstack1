@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>covid-vaccine-booking</title>
+        <meta name="viewport" content="width=device-width ,initial-scale=1">
+        <style>
+            html, body {
+              height: 100%;
+              margin: 0;
+            }
+            table {
+              padding: 10px;
+              margin-left: 10%;
+              
+            }
+            tr{
+              margin: 5px;
+              background-color: rgba(54, 46, 46, 0.403);
+            }
+            th {
+              padding: 5px;
+            }
+            td {
+              padding: 5px;
+            }
+            .cont{
+                display: flex;
+                flex-direction: column;
+              }
+              .col-1{
+                float: left;
+                width: 100%;
+                flex: 1;  
+              }
+              input{
+                width: 20%;
+                height: 40px;
+                border-radius: 10px;
+              }
+              .box2{
+                width: 100%;
+                margin: 1%;
+                height: 50px;
+                float: left;
+                background-color: rgba(63, 58, 58, 0.794);
+                color: azure;
+              }
+            body {
+              background: linear-gradient(to right, #c48f87,#caa173, #ea6528);
+            }
+            .content {
+              color: white;
+              text-align: center;
+              padding: 50px;
+              font-size: 24px;
+            }
+          </style>
+        
+    </head>
+
+    <body>
+       
+        {% include 'nav_admin.html' %}
+        <div class="content">
+        {% block content %}
+
+        {% endblock content%}
+    </div>
+    </body>
+</html>

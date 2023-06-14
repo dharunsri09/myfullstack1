@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+
+{%block content %}
+<h1>
+    BOOK YOUR VACCINE CENTER....
+</h1>
+
+    {% for c in center %}
+    
+    <a href="{% url 'center' c.id %}">
+   <div class="box">
+    
+            {{c.cen_name}}
+            <br>
+            TOTAL SLOT AVAILABLE : {{c.slot_coun}}
+            <br>
+            ADDRESS:{{c.cen_loc_dis}}
+            <button style=" margin-top:200px; text-align: center;width:300px;height: 60px; color: rgb(225, 227, 231); background-color: cornflowerblue;">BOOK SLOT</button>
+    
+</div>
+</a>
+    {% endfor %}
+
+{%endblock content %}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <title>Navigation Bar</title>
+  <link rel='stylesheet' type="text/css" media="screen" href="{% static 'styles/admin-nav.css' %}">
+</head>
+<body>
+  <ul class="navbar">
+    <li><img src="{% static 'img/1111111.jpg' %}"></li>
+    <li><a href="{% url 'admin-home' %}">Home</a></li>
+    <li><a href="{% url 'centersE' %}">Show Center</a></li>
+    <li><a href="{% url 'add-location' %}">Add center</a></li>
+    <li><a href="{% url 'abookings' %}">Bookings</a></li>
+    {% if request.user.is_authenticated %} 
+    <li><a href="{% url 'logout' %}">Logout</a></li>
+    {% else %}
+    <li><a href="{% url 'login' %}">Login</a></li>
+    {% endif %} 
+  </ul>
+</body>
+</html>

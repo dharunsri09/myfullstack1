@@ -1,0 +1,47 @@
+{% extends 'main.html' %}
+
+{%block content %}
+    <div class="box1">
+        <p>ENTER DETAILS TO CONFIRM THE SLOT </p>
+        <br>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <label>CENTER NAME : </label>
+                
+                <input type="text" name="vcname" value="{{center.cen_name}}" placeholder="name" readonly style="width:400px; height: 25px;"/> 
+
+                <br>
+                <br>
+                <br>
+                <label>E MAIL : </label>
+                
+                <input type="email" name="ename" placeholder="email" style="width:400px; height: 25px;"/>
+
+                <br>
+                <br>
+                <br>
+                <label>FIRST NAME : </label>
+                
+                <input type="text" name="fname" placeholder="First name" style="width:400px; height: 25px;"/>
+                <br>
+                <br>
+                <br>
+                <label>LAST NAME : </label>
+                <input type="text" name="lname" style="width:400px; height: 25px;" placeholder="Last name"/>
+                <br>
+                <br>
+                <br>
+                <label>CONTACT NO:</label>
+                <input type="text" name="contactnum" placeholder="Contact no" style="width:400px; height: 25px;" />
+                <br>
+                <br>
+                <br>
+                <label>CHOOSE SLOT :</label>
+                <input type="time" name="datetime" placeholder="select slot btw 9.00-17.00" min="09:00" max="17:00" style="width:400px; height: 25px;"/>
+                <br>
+                <br>
+                <br>
+                <input type="submit" value="CONFIRM BOOKING" style="width:200px; height: 25px; "/>
+            </form>
+    </div>
+{%endblock content %}

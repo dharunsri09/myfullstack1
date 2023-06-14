@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Hello</h1>
+<form method="POST" enctype="multipart/form-data" action="{% url 'upload_image' %}">
+    {% csrf_token %}
+    <input type="file" name="image">
+    <input type="submit" value="Upload">
+  </form>
+  
+  {% if my_model.image %}
+  <img src="{{ my_model.image.url }}" alt="Uploaded Image">
+{% endif %}
+{% endblock content %}

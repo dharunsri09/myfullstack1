@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <title>Navigation Bar</title>
+  <link rel='stylesheet' type="text/css" media="screen" href="{% static 'styles/nav.css' %}">
+</head>
+<body>
+  <ul class="navbar">
+    <li><img src="{% static 'img/1111111.jpg' %}"></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="{% url 'myprofile' user.id%}">About</a></li>
+    <li><a href="/booking/">Booking</a></li>
+    <li><a href="/about/">Contact</a></li>
+    {% if request.user.is_authenticated %} 
+    <li><a href="{% url 'logout' %}" style="margin-left: 800px;">Logout</a></li>
+    {% else %}
+    <li><a href="{% url 'login' %}" style="margin-left: 800px;">Login</a></li>
+    {% endif %} 
+    <form action="{% url 'book' %}">
+      <input type="text" name="q" placeholder="Search center.."/>
+    </form> 
+
+
+    
+
+
+  </ul>
+</body>
+</html>

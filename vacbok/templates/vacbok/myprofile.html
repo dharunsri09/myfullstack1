@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+{% load static %}
+{%block content %}
+
+<h1>{{user.username}}</h1>
+<div>
+    <div>
+       <label>E-Mail : </label>{{user.email}}
+    </div>
+
+    <div>
+        <label>First Name : </label>{{user.first_name}}
+    </div>
+    <a href="{% url 'update-user' %}"><button>EDIT USER</button></a>
+</div>
+{%endblock content %}

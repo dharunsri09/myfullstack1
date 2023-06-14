@@ -1,0 +1,20 @@
+{% extends 'admin_main.html' %}
+
+{%block content %}
+<h1>
+    VIEW VACCINE CENTER....
+</h1>
+    {% for c in center %}
+         <div class="box">
+            {{c.cen_name}}
+            <br>
+            TOTAL SLOT AVAILABLE : {{c.slot_coun}}
+            <br>
+            ADDRESS:{{c.cen_loc_dis}}
+            <br>
+            <a href="{% url 'update-location' c.id %}" style="float: bottom;;margin: 5px;"><button style="height: 30px; width: 150px; margin-top:150px ;">EDIT</button></a>
+            <a href="{% url 'delete' c.id %}" style="float: bottom;;margin: 5px;"><button style="height: 30px; width: 150px; margin-top:10px ;">DELETE</button></a>
+        </div>
+    {% endfor %}
+
+{%endblock content %}

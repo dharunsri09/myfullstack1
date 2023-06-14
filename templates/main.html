@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>covid-vaccine-booking</title>
+        <meta name="viewport" content="width=device-width ,initial-scale=1">
+        <link rel='stylesheet' type="text/css" media="screen" href="{% static 'styles/main.css' %}">
+    </head>
+    <body>
+       
+        
+      {% include 'nav.html' %}
+
+      {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+        <div class="content">
+        {% block content %}
+
+        {% endblock content%}
+    </div>
+    </body>
+</html>

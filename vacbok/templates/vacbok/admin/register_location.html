@@ -1,0 +1,14 @@
+{% extends 'admin_main.html' %}
+
+{% block content %} 
+<h2>ADD CENTER </h2>
+<div>
+    <form method="POST" action="">
+        {% csrf_token %} 
+        {{form.as_p}}
+        <input type="submit" value="SUBMIT" />
+    </form>
+</div>
+
+
+{% endblock content %}

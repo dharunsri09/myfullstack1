@@ -1,0 +1,35 @@
+{% extends 'admin_main.html' %}
+
+{% block content %} 
+<div>
+    <p>BOOKINGS FOR TODAY</p>
+    <table>
+        <tr>
+          <th>ID</th>
+          <th>USER_ID</th>
+          <th>NAME</th>
+          <th>CENTER NAME</th>
+          <th>DATE & TIME</th>
+          <th>VERIFICATION</th>
+        </tr>
+    {% for c in center %}
+        <tr>
+            <td>{{c.id}} </td>                          
+            <td>{{c.username}}  </td>   
+            <td>{{c.first_name}}  </td>   
+            <td>{{c.vaccine_center}}  </td> 
+            <td>{{c.book_date}}</td>  
+            <td>
+            {% if c.is_verified %}
+                <p>Vaccined</p>
+            {% else %}
+                <a href="{% url 'updates' c.id %}"><button style="text-align: center;width:300px;height: 60px; color: rgb(225, 227, 231); background-color: cornflowerblue;">Verify</button></a>
+        	{% endif %}
+             </td>
+        </tr>
+    {% endfor %}
+</table>
+</div>
+
+
+{% endblock content %}

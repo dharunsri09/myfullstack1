@@ -1,0 +1,21 @@
+
+{% extends 'main.html' %}
+{% load static %}
+{%block content %}
+<div class="cont">
+    <div class="col-1" style="background-color: rgba(10, 10, 10, 0.871); border-radius: 10px;padding: 10px; ">
+        <img src="{% static 'img/222222.webp' %}" width="900px" height="600px" style="float: left; border-radius: 10px;"/>
+        <br>
+        <br>
+        <p>Ongoing safety monitoring after the Food and Drug Administration’s (FDA) approval shows that COVID-19 vaccination continues to be safe for children. While adverse reactions are rare, the benefits of COVID-19 vaccination outweigh the known risks of COVID-19 and possible severe complications.</p>
+    </div>
+
+    <div class="col-1">
+        <h4>
+            Hello {{username}},
+            <center>Total number of centers available today is </center>
+            <center><p style="font-size: 60px; font-weight: 500; color: black;">{{c_count}}</p></center>
+        </h4>
+        </div>
+</div>
+{%endblock content %}
